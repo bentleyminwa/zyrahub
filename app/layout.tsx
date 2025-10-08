@@ -35,7 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${quicksand.className} } antialiased`}>{children}</body>
+      <body className={`${quicksand.className} } antialiase bg-background`}>
+        {children}
+      </body>
     </html>
   );
 }
