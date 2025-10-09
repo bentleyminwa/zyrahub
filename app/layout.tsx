@@ -1,3 +1,4 @@
+import Footer from '@/components/shared/footer';
 import type { Metadata } from 'next';
 import { Quicksand } from 'next/font/google';
 import './globals.css';

@@ -56,4 +56,26 @@ export const assets = {
       slug: 'gym-fitness',
     },
   ],
+  footer: {
+    companyInfo: {
+      title: 'Hub.',
+      description:
+        'Feel your world shrunk on the same platform. Access all your favorite services in one place.',
+    },
+    aboutInfo: {
+      title: 'About',
+      links: [
+        { title: 'About Z Hub', path: '/about' },
+        { title: 'Terms & Conditions', path: '/terms' },
+        { title: 'Privacy Policy', path: '/privacy' },
+      ],
+    },
+    contactInfo: {
+      title: 'Contact',
+      links: [
+        { title: 'Contact Z Hub', path: '/contact' },
+        { title: 'Support', path: '/support' },
+      ],
+    },
+  },
 };
