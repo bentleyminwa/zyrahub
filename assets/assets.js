@@ -7,7 +7,6 @@ import {
   HousePlugIcon,
   PizzaIcon,
   ShirtIcon,
-  ShoppingCartIcon,
   StoreIcon,
   WineIcon,
 } from 'lucide-react';
