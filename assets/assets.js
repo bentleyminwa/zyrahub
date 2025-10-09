@@ -1,4 +1,5 @@
 import {
+  BellIcon,
   ChefHatIcon,
   DumbbellIcon,
   FlowerIcon,
@@ -65,9 +66,9 @@ export const assets = {
       path: '/favorites',
     },
     {
-      node: <ShoppingCartIcon />,
-      label: 'Cart',
-      path: '/cart',
+      node: <BellIcon />,
+      label: 'Notifications',
+      path: '/notifications',
     },
   ],
   footer: {
