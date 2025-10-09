@@ -2,14 +2,12 @@ import { assets } from '@/assets/assets';
 import LogoLoop from '@/components/LogoLoop';
 
 export default function ServiceLoop() {
-  const { serviceLogos } = assets;
+  const { services } = assets;
 
   return (
-    <section
-      style={{ height: '200px', position: 'relative', overflow: 'hidden' }}
-    >
+    <section style={{ position: 'relative', overflow: 'hidden' }}>
       <LogoLoop
-        logos={serviceLogos}
+        logos={services}
         speed={10}
         direction='left'
         logoHeight={60}
