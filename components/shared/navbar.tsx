@@ -3,7 +3,7 @@ import Logo from './logo';
 import { assets } from '@/assets/assets';
 import Link from 'next/link';
 
-import NavAuth from '@/features/auth/nav-auth';
+import NavAuth from '@/features/auth/components/nav-auth';
 import SearchBox from '../ui/searchbox';
 
 export default function Navbar() {

@@ -34,8 +34,8 @@ export const assets = {
     },
     {
       node: <StoreIcon />,
-      title: 'Shop',
-      slug: 'shop',
+      title: 'Shopping',
+      slug: 'shopping',
     },
     {
       node: <ShirtIcon />,

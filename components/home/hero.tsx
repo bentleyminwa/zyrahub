@@ -1,6 +1,6 @@
 import { assets } from '@/assets/assets';
 import { Button } from '@/components/ui/button';
-import NavAuth from '@/features/auth/nav-auth';
+import NavAuth from '@/features/auth/components/nav-auth';
 import { LocateFixedIcon, SearchIcon } from 'lucide-react';
 import Image from 'next/image';
 import Logo from '../shared/logo';
