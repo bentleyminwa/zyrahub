@@ -2,9 +2,10 @@ import { assets } from '@/assets/assets';
 import { Button } from '@/components/ui/button';
 import { LocateFixedIcon, SearchIcon } from 'lucide-react';
 import Image from 'next/image';
+import Logo from '../shared/logo';
 
 export default function HeroSection() {
-  const { logo, heroImage } = assets;
+  const { heroImage } = assets;
 
   return (
     <header className='relative w-full h-[60vh]'>
@@ -17,10 +18,7 @@ export default function HeroSection() {
       <div className='absolute inset-0 bg-black/80' />
 
       <div className='absolute top-0 left-0 w-full flex justify-between items-center pt-10 px-14'>
-        <div className='flex items-center'>
-          <Image src={logo} alt='logo' className='w-8 h-8' />
-          <h1 className='text-4xl font-bold text-primary-foreground'>Hub.</h1>
-        </div>
+        <Logo />
 
         <div className='flex gap-4'>
           <Button variant={'outline'}>Login</Button>

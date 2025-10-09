@@ -1,9 +1,15 @@
 import Footer from '@/components/shared/footer';
+import Navbar from '@/components/shared/navbar';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function PublicLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
-      <main>{children}</main>
+      <Navbar />
+      <main className='min-h-[61vh]'>{children}</main>
       <Footer />
     </>
   );
