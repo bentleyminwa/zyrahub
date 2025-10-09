@@ -1,5 +1,6 @@
 import { assets } from '@/assets/assets';
 import { Button } from '@/components/ui/button';
+import NavAuth from '@/features/auth/nav-auth';
 import { LocateFixedIcon, SearchIcon } from 'lucide-react';
 import Image from 'next/image';
 import Logo from '../shared/logo';
@@ -20,10 +21,7 @@ export default function HeroSection() {
       <div className='absolute top-0 left-0 w-full flex justify-between items-center pt-10 px-14'>
         <Logo />
 
-        <div className='flex gap-4'>
-          <Button variant={'outline'}>Login</Button>
-          <Button variant={'default'}>Sign Up</Button>
-        </div>
+        <NavAuth />
       </div>
 
       <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center flex flex-col gap-6 justify-center items-center'>

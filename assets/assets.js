@@ -2,9 +2,11 @@ import {
   ChefHatIcon,
   DumbbellIcon,
   FlowerIcon,
+  HeartIcon,
   HousePlugIcon,
   PizzaIcon,
   ShirtIcon,
+  ShoppingCartIcon,
   StoreIcon,
   WineIcon,
 } from 'lucide-react';
@@ -54,6 +56,18 @@ export const assets = {
       node: <DumbbellIcon />,
       title: 'Gym & Fitness',
       slug: 'gym-fitness',
+    },
+  ],
+  navIcons: [
+    {
+      node: <HeartIcon />,
+      label: 'Favorites',
+      path: '/favorites',
+    },
+    {
+      node: <ShoppingCartIcon />,
+      label: 'Cart',
+      path: '/cart',
     },
   ],
   footer: {
