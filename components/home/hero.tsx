@@ -32,7 +32,7 @@ export default function HeroSection() {
         <h1 className='text-5xl font-bold text-white'>
           Your world. All in one Hub.
         </h1>
-        <form className='w-2/3 flex items-center gap-2 justify-around p-2 rounded-lg bg-background'>
+        <form className='w-2/3 flex items-center gap-2 justify-around p-1 rounded-lg bg-background'>
           <label htmlFor='search'>
             <LocateFixedIcon />
           </label>
