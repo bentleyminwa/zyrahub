@@ -1,14 +1,12 @@
 'use client';
 
 import { assets } from '@/assets/assets';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { useCategory } from '../hooks/useCategory';
 
 export default function HubServices() {
-  const searchParams = useSearchParams();
+  const { currentCategory } = useCategory();
   const router = useRouter();
-
-  const params = new URLSearchParams(searchParams.toString());
-  const currentCategory = params.get('category');
 
   const { services } = assets;
 
