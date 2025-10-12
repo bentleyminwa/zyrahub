@@ -1,17 +1,41 @@
 'use client';
 
+import { assets } from '@/assets/assets';
+import HubCard from '@/features/hubs/components/hub-card';
 import { useCategory } from '@/features/hubs/hooks/useCategory';
+
+import type { Hub } from '@/features/hubs/types/validate';
 
 export default function Hubs() {
   const { currentCategory } = useCategory();
 
   const formattedCategory = currentCategory?.replace(/-/g, ' ');
 
+  const hubs: Hub[] = currentCategory
+    ? assets.hubs.filter((hub) => hub.categories[0].alias === currentCategory)
+    : assets.hubs;
+
   return (
     <main className='grid grid-cols-3 mt-5 border-t border-green-300'>
-      <div className='border border-red-300 col-span-2 pl-14 pr-7'>
-        <h3 className='capitalize'>{formattedCategory}</h3>
-      </div>
+      <section className='border border-red-300 col-span-2 pl-14 pr-7 py-10'>
+        <h3 className='capitalize text-sm text-gray-400 font-semibold'>
+          {formattedCategory}
+        </h3>
+        <h2 className='capitalize text-2xl font-bold'>
+          Top {formattedCategory} Hubs near you.
+        </h2>
+
+        <ul className='mt-10 grid grid-cols-2 gap-4'>
+          {hubs.map((hub) => (
+            <li
+              key={hub.id}
+              className='border border-gray-300 rounded-lg hover:transform hover:scale-105 hover:shadow hover:shadow-primary/20 duration-200 ease-in-out'
+            >
+              <HubCard hub={hub} />
+            </li>
+          ))}
+        </ul>
+      </section>
       <div className='border border-blue-300'>Map</div>
     </main>
   );
