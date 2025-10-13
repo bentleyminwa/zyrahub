@@ -128,8 +128,8 @@ export const assets = {
         neighborhood: ['Times Square'],
       },
       coordinates: {
-        latitude: 40.758,
-        longitude: -73.9855,
+        latitude: 30.758,
+        longitude: -78.9855,
       },
       hours: [
         {
