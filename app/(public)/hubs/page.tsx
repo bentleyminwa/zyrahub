@@ -29,7 +29,7 @@ export default function Hubs() {
           {hubs.map((hub) => (
             <li
               key={hub.id}
-              className='border border-gray-300 rounded-lg hover:transform hover:scale-105 hover:shadow hover:shadow-primary/20 duration-200 ease-in-out'
+              className='border border-gray-300 rounded-lg hover:shadow hover:shadow-primary/20 duration-200 ease-in-out'
             >
               <HubCard hub={hub} />
             </li>
