@@ -128,8 +128,8 @@ export const assets = {
         neighborhood: ['Times Square'],
       },
       coordinates: {
-        latitude: 30.758,
-        longitude: -78.9855,
+        latitude: 0.51928,
+        longitude: 35.27469,
       },
       hours: [
         {
@@ -224,8 +224,8 @@ export const assets = {
         neighborhood: ['Times Square'],
       },
       coordinates: {
-        latitude: 40.758,
-        longitude: -73.9855,
+        latitude: 0.5,
+        longitude: 35.28,
       },
       hours: [
         {
@@ -323,8 +323,8 @@ export const assets = {
         neighborhood: ['SoHo'],
       },
       coordinates: {
-        latitude: 40.724,
-        longitude: -73.997,
+        latitude: 0.48954,
+        longitude: 35.997,
       },
       hours: [
         {

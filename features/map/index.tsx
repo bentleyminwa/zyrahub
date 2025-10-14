@@ -9,14 +9,15 @@ import 'leaflet/dist/leaflet.css';
 
 interface MapProps {
   location: LatLngExpression | LatLngTuple;
+  hubCoords: LatLngExpression[] | LatLngTuple[];
   zoom?: number;
 }
 
 const defaults = {
-  zoom: 19,
+  zoom: 14,
 };
 
-const Map = ({ location, zoom = defaults.zoom }: MapProps) => {
+const Map = ({ location, hubCoords, zoom = defaults.zoom }: MapProps) => {
   console.log('map rendered!');
 
   return (
@@ -31,9 +32,13 @@ const Map = ({ location, zoom = defaults.zoom }: MapProps) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
-        <Marker position={location} draggable={false}>
-          <Popup>Hey ! I study here</Popup>
-        </Marker>
+        {hubCoords.map((coord, index) => (
+          <Marker key={index} position={coord}>
+            <Popup>
+              <h2>Hub</h2>
+            </Popup>
+          </Marker>
+        ))}
       </MapContainer>
     </section>
   );

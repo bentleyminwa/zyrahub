@@ -68,7 +68,7 @@ export default function Hubs() {
         </ul>
       </section>
 
-      <Map location={coordinates} />
+      <Map location={coordinates} hubCoords={hubCoordinates} />
     </main>
   );
 }
