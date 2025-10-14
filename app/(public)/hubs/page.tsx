@@ -1,16 +1,22 @@
 'use client';
 
+import dynamic from 'next/dynamic';
+
 import { assets } from '@/assets/assets';
 import HubCard from '@/features/hubs/components/hub-card';
 import { useCategory } from '@/features/hubs/hooks/useCategory';
+import { useLocation } from '@/features/map/hooks/useLocation';
 
 import type { Hub } from '@/features/hubs/types/validate';
-import Map from '@/features/map';
+// import Map from '@/features/map';
 
 import type { LatLngExpression } from 'leaflet';
 
 export default function Hubs() {
+  const Map = dynamic(() => import('@/features/map'), { ssr: false });
+
   const { currentCategory } = useCategory();
+  const { coordinates } = useLocation();
 
   const formattedCategory = currentCategory?.replace(/-/g, ' ');
 
@@ -23,7 +29,7 @@ export default function Hubs() {
     hub.coordinates.longitude,
   ]);
 
-  console.log(hubCoordinates);
+  console.log(coordinates);
 
   if (!hubs.length) {
     return (
@@ -62,7 +68,7 @@ export default function Hubs() {
         </ul>
       </section>
 
-      <Map location={[51.505, -0.09]} />
+      <Map location={coordinates} />
     </main>
   );
 }
