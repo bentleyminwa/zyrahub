@@ -5,7 +5,7 @@ import HubCard from '@/features/hubs/components/hub-card';
 import { useCategory } from '@/features/hubs/hooks/useCategory';
 
 import type { Hub } from '@/features/hubs/types/validate';
-import Map from '@/features/location/components/map';
+import Map from '@/features/map';
 
 import type { LatLngExpression } from 'leaflet';
 
@@ -22,6 +22,8 @@ export default function Hubs() {
     hub.coordinates.latitude,
     hub.coordinates.longitude,
   ]);
+
+  console.log(hubCoordinates);
 
   if (!hubs.length) {
     return (
@@ -60,9 +62,7 @@ export default function Hubs() {
         </ul>
       </section>
 
-      <section className='relative'>
-        <Map coordinates={hubCoordinates} />
-      </section>
+      <Map location={[51.505, -0.09]} />
     </main>
   );
 }
