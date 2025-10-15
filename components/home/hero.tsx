@@ -9,7 +9,7 @@ export default function HeroSection() {
   const { heroImage } = assets;
 
   return (
-    <header className='relative w-full h-[60vh]'>
+    <header className='relative w-full min-h-[60vh]'>
       <Image
         src={heroImage}
         alt={'hero image'}
