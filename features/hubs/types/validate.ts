@@ -1,9 +1,10 @@
+import type { Review } from '@/features/reviews/types/validate';
 import { StaticImageData } from 'next/image';
 
-interface User {
+export interface User {
   id: string;
   name: string;
-  profile_url: string;
+  profile_url: StaticImageData | string;
 }
 
 interface Categories {
@@ -53,15 +54,6 @@ interface Photo {
   url: StaticImageData | string;
   width: number;
   height: number;
-}
-
-interface Review {
-  id: string;
-  user: User;
-  rating: number;
-  time_created: string;
-  text: string;
-  url: string;
 }
 
 interface MoreInfo {

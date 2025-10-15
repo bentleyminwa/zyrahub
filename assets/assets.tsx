@@ -19,6 +19,8 @@ import sephora_1 from './images/hub/sephora-1.jpg';
 import sephora_2 from './images/hub/sephora-2.jpg';
 import sephora_main from './images/hub/sephora-main.jpg';
 
+import userImage from './images/users/user.jpg';
+
 export const assets = {
   logo,
   heroImage,
@@ -221,11 +223,11 @@ export const assets = {
           user: {
             id: 'u1',
             name: 'Lena M.',
-            profile_url: 'https://example.com/user/u1',
+            profile_url: userImage,
           },
           rating: 5,
           time_created: '2025-04-01T14:20:00Z',
-          text: 'Amazing staff and product variety!',
+          text: 'Amazing staff and product variety! I really love this place and recommend it to my friends. So if you are in the area, check it out.',
           url: 'https://example.com/hub/sephora-nyc/review/r1',
         },
       ],
