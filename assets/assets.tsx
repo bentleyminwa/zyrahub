@@ -7,6 +7,7 @@ import {
   HousePlugIcon,
   PizzaIcon,
   ShirtIcon,
+  StarIcon,
   StoreIcon,
   WineIcon,
 } from 'lucide-react';
@@ -473,6 +474,18 @@ export const assets = {
       },
       created_at: '2022-10-15T00:00:00Z',
       updated_at: '2025-07-10T10:00:00Z',
+    },
+  ],
+  hubActions: [
+    {
+      label: 'Write a review',
+      href: '#',
+      icon: <StarIcon />,
+    },
+    {
+      label: 'Save Hub',
+      href: '#',
+      icon: <HeartIcon />,
     },
   ],
 };
