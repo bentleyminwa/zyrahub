@@ -23,29 +23,16 @@ export default function Hub() {
       <HubHero hub={hub} />
 
       <section className='mt-10 w-[68%] mx-auto'>
-        {/* actions */}
         <HubActions />
-
-        {/* contact info */}
         <HubContact hub={hub} />
-
-        {/* gallery */}
         <HubGallery hub={hub} />
-
-        {/* hours and location */}
         <section>
           <h2 className='text-2xl font-semibold'>Hours and Location</h2>
-
           <section className='w-full grid grid-cols-2 gap-5 mt-5'>
-            {/* hours */}
             <HubHours hub={hub} />
-
-            {/* location */}
             <HubLocation hub={hub} />
           </section>
         </section>
-
-        {/* description */}
         <section className='mt-10'>
           <h2 className='text-2xl font-semibold'>About the Hub</h2>
           <p className='mt-2 max-w-1/2'>{hub.description}</p>
