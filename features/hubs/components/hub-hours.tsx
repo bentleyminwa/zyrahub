@@ -27,7 +27,7 @@ const HubHours = ({ hub }: HubHoursProps) => {
   };
 
   return (
-    <div className='border border-blue-500'>
+    <div>
       {hub.hours.map((hour, index) => (
         <div key={index} className='space-y-2 text-sm font-semibold'>
           {hour.open.map((time, index) => (

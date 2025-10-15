@@ -18,8 +18,6 @@ const defaults = {
 };
 
 const Map = ({ location, hubCoords, zoom = defaults.zoom }: MapProps) => {
-  console.log('map rendered!');
-
   return (
     <section>
       <MapContainer

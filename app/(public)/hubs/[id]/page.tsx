@@ -36,7 +36,7 @@ export default function Hub() {
         <section>
           <h2 className='text-2xl font-semibold'>Hours and Location</h2>
 
-          <section className='border border-red-500 w-full grid grid-cols-2 gap-5 mt-5'>
+          <section className='w-full grid grid-cols-2 gap-5 mt-5'>
             {/* hours */}
             <HubHours hub={hub} />
 
