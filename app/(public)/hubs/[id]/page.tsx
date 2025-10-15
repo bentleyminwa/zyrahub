@@ -44,6 +44,12 @@ export default function Hub() {
             <HubLocation hub={hub} />
           </section>
         </section>
+
+        {/* description */}
+        <section className='mt-10'>
+          <h2 className='text-2xl font-semibold'>About the Hub</h2>
+          <p className='mt-2 max-w-1/2'>{hub.description}</p>
+        </section>
       </section>
     </main>
   );
