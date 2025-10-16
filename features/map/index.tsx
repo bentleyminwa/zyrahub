@@ -17,7 +17,11 @@ const defaults = {
   zoom: 14,
 };
 
-const Map = ({ location, hubCoords, zoom = defaults.zoom }: MapProps) => {
+const MapComponent = ({
+  location,
+  hubCoords,
+  zoom = defaults.zoom,
+}: MapProps) => {
   return (
     <section>
       <MapContainer
@@ -42,4 +46,4 @@ const Map = ({ location, hubCoords, zoom = defaults.zoom }: MapProps) => {
   );
 };
 
-export default Map;
+export default MapComponent;

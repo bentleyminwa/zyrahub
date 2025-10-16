@@ -12,7 +12,7 @@ import type { Hub } from '@/features/hubs/types/validate';
 import type { LatLngExpression, LatLngTuple } from 'leaflet';
 
 export default function Hubs() {
-  const Map = dynamic(() => import('@/features/map'), { ssr: false });
+  const MapComponent = dynamic(() => import('@/features/map'), { ssr: false });
 
   const { location } = useLocationContext();
   const coordinates: LatLngExpression | LatLngTuple = [
@@ -69,7 +69,7 @@ export default function Hubs() {
         </ul>
       </section>
 
-      <Map location={coordinates} hubCoords={hubCoordinates} />
+      <MapComponent location={coordinates} hubCoords={hubCoordinates} />
     </main>
   );
 }
