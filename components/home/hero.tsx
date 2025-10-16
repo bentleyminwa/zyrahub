@@ -1,7 +1,6 @@
 import { assets } from '@/assets/assets';
-import { Button } from '@/components/ui/button';
 import NavAuth from '@/features/auth/components/nav-auth';
-import { LocateFixedIcon, SearchIcon } from 'lucide-react';
+import LocationSearch from '@/features/location/components/location-search';
 import Image from 'next/image';
 import Logo from '../shared/logo';
 
@@ -28,21 +27,8 @@ export default function HeroSection() {
         <h1 className='text-5xl font-bold text-white'>
           Your world. All in one Hub.
         </h1>
-        <form className='w-2/3 flex items-center gap-2 justify-around p-1 rounded-lg bg-background'>
-          <label htmlFor='search'>
-            <LocateFixedIcon />
-          </label>
-          <input
-            type='text'
-            name='search'
-            id='search'
-            placeholder='Enter your location'
-            className='w-full border-none outline-none'
-          />
-          <Button variant={'default'} size={'icon'}>
-            <SearchIcon />
-          </Button>
-        </form>
+
+        <LocationSearch />
       </div>
     </header>
   );

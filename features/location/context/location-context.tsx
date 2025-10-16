@@ -17,21 +17,33 @@ function LocationProvider({ children }: { children: React.ReactNode }) {
   const [error, setError] = useState<GeolocationPositionError | null>(null);
 
   useEffect(() => {
-    if (typeof window !== undefined) {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          setLocation([pos.coords.latitude, pos.coords.longitude]);
-        },
-        (err) => {
-          setError(err);
-        },
-        {
-          enableHighAccuracy: true,
-          timeout: 5000,
-          maximumAge: 0,
-        }
-      );
+    if (typeof window === undefined) return;
+
+    if (!navigator.geolocation) {
+      setError({
+        code: 0,
+        message: 'Geolocation is not supported by this browser.',
+        PERMISSION_DENIED: 1,
+        POSITION_UNAVAILABLE: 2,
+        TIMEOUT: 3,
+      });
+
+      return;
     }
+
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        setLocation([pos.coords.latitude, pos.coords.longitude]);
+      },
+      (err) => {
+        setError(err);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+      }
+    );
   }, []);
 
   return (
