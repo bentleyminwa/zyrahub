@@ -1,4 +1,4 @@
-import Footer from '@/components/shared/footer';
+import { LocationProvider } from '@/features/location/context/location-context';
 import type { Metadata } from 'next';
 import { Quicksand } from 'next/font/google';
 import './globals.css';
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${quicksand.className} } antialiase bg-background`}>
-        {children}
+        <LocationProvider>{children}</LocationProvider>
       </body>
     </html>
   );
