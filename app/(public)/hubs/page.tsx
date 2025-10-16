@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic';
 import { assets } from '@/assets/assets';
 import HubCard from '@/features/hubs/components/hub-card';
 import { useCategory } from '@/features/hubs/hooks/useCategory';
-// import { useLocation } from '@/features/map/hooks/useLocation';
 import { useLocationContext } from '@/features/location/hooks/useLocationContext';
 
 import type { Hub } from '@/features/hubs/types/validate';
