@@ -14,6 +14,10 @@ export default async function NavAuth() {
 
   const user = await currentUser();
 
+  const getNameInitials = (first: string, last: string) => {
+    return `${first.charAt(0).toUpperCase()}${last.charAt(0).toUpperCase()}`;
+  };
+
   return (
     <>
       {isAuthenticated ? (
@@ -25,7 +29,9 @@ export default async function NavAuth() {
                 className='w-10 h-10 rounded-full'
               />
               <AvatarFallback className='p-3 rounded-full bg-background'>
-                <span className='text-sm font-semibold'>{user?.firstName}</span>
+                <span className='text-sm font-semibold'>
+                  {getNameInitials(user?.firstName || '', user?.lastName || '')}
+                </span>
               </AvatarFallback>
             </Avatar>
           </PopoverTrigger>
