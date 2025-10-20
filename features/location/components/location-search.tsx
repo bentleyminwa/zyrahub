@@ -10,8 +10,11 @@ const LocationSearch = () => {
   const [location, setLocation] = useState('');
   const router = useRouter();
 
-  const handleSearch = () => {
-    router.push(`/hubs?location=${location}`);
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!location) return;
+    router.push(`/hubs?location=${encodeURIComponent(location)}`);
   };
 
   return (

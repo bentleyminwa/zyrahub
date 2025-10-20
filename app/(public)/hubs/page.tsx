@@ -6,6 +6,7 @@ import { assets } from '@/assets/assets';
 import HubCard from '@/features/hubs/components/hub-card';
 import { useCategory } from '@/features/hubs/hooks/useCategory';
 import { useLocationContext } from '@/features/location/hooks/useLocationContext';
+import { useSearchParams } from 'next/navigation';
 
 import type { Hub } from '@/features/hubs/types/validate';
 
@@ -13,6 +14,10 @@ import type { LatLngExpression, LatLngTuple } from 'leaflet';
 
 export default function Hubs() {
   const MapComponent = dynamic(() => import('@/features/map'), { ssr: false });
+  const searchParams = useSearchParams();
+
+  const searchedLocation = searchParams.get('location');
+  console.log(searchedLocation);
 
   const { location } = useLocationContext();
   const coordinates: LatLngExpression | LatLngTuple = [
@@ -26,8 +31,18 @@ export default function Hubs() {
   const formattedCategory = currentCategory?.replace(/-/g, ' ');
 
   const hubs: Hub[] = currentCategory
-    ? assets.hubs.filter((hub) => hub.categories[0].alias === currentCategory)
-    : assets.hubs;
+    ? assets.hubs.filter(
+        (hub) =>
+          hub.categories[0].alias === currentCategory &&
+          hub.location.city
+            .toLowerCase()
+            .includes(searchedLocation?.toLowerCase() || '')
+      )
+    : assets.hubs.filter((hub) =>
+        hub.location.city
+          .toLowerCase()
+          .includes(searchedLocation?.toLowerCase() || '')
+      );
 
   const hubCoordinates: LatLngExpression[] = hubs.map((hub) => [
     hub.coordinates.latitude,
@@ -56,7 +71,9 @@ export default function Hubs() {
           {formattedCategory}
         </h3>
         <h2 className='capitalize text-2xl font-bold'>
-          Top {formattedCategory} Hubs near you.
+          {searchedLocation
+            ? 'Top Hubs in ' + searchedLocation
+            : 'Top Hubs near you'}
         </h2>
 
         <ul className='mt-10 grid grid-cols-2 gap-4'>
