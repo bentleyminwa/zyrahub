@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { SignOutButton } from '@clerk/nextjs';
 import { auth, currentUser } from '@clerk/nextjs/server';
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
 import {
@@ -40,10 +41,12 @@ export default async function NavAuth() {
             className='w-fit bg-background p-3 rounded-md shadow-md space-y-3'
           >
             <p className='font-semibold text-sm'>Account</p>
-            <Button variant={'destructive'}>
-              <LogOutIcon />
-              <span>Logout</span>
-            </Button>
+            <SignOutButton>
+              <Button variant={'destructive'}>
+                <LogOutIcon />
+                <span>Logout</span>
+              </Button>
+            </SignOutButton>
           </PopoverContent>
         </Popover>
       ) : (
