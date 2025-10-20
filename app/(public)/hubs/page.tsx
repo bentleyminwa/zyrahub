@@ -20,6 +20,8 @@ export default function Hubs() {
     location[1],
   ];
 
+  console.log(coordinates);
+
   const { currentCategory } = useCategory();
   const formattedCategory = currentCategory?.replace(/-/g, ' ');
 

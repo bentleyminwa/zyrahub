@@ -31,19 +31,23 @@ function LocationProvider({ children }: { children: React.ReactNode }) {
       return;
     }
 
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        setLocation([pos.coords.latitude, pos.coords.longitude]);
-      },
-      (err) => {
-        setError(err);
-      },
-      {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0,
-      }
-    );
+    function fetchCurrentPosition() {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setLocation([pos.coords.latitude, pos.coords.longitude]);
+        },
+        (err) => {
+          setError(err);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0,
+        }
+      );
+    }
+
+    fetchCurrentPosition();
   }, []);
 
   return (
