@@ -8,6 +8,7 @@ import {
   PopoverTrigger,
 } from '@radix-ui/react-popover';
 import { LogOutIcon } from 'lucide-react';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function NavAuth() {
@@ -41,10 +42,13 @@ export default function NavAuth() {
         </Popover>
       ) : (
         <div className='flex gap-4'>
-          <Button variant={'outline'} onClick={() => setLoggedIn(true)}>
-            Login
+          <Button variant={'outline'} asChild>
+            <Link href='/sign-in'>Login</Link>
           </Button>
-          <Button variant={'default'}>Sign Up</Button>
+
+          <Button variant={'default'} asChild>
+            <Link href='/sign-up'>Sign Up</Link>
+          </Button>
         </div>
       )}
     </>

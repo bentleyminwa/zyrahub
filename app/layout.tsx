@@ -1,4 +1,5 @@
 import { LocationProvider } from '@/features/location/context/location-context';
+import { ClerkProvider } from '@clerk/nextjs';
 import type { Metadata } from 'next';
 import { Quicksand } from 'next/font/google';
 import './globals.css';
@@ -37,7 +38,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${quicksand.className} } antialiase bg-background`}>
-        <LocationProvider>{children}</LocationProvider>
+        <ClerkProvider>
+          <LocationProvider>{children}</LocationProvider>
+        </ClerkProvider>
       </body>
     </html>
   );
