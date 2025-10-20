@@ -1,6 +1,5 @@
-'use client';
-
 import { Button } from '@/components/ui/button';
+import { auth, currentUser } from '@clerk/nextjs/server';
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
 import {
   Popover,
@@ -9,23 +8,24 @@ import {
 } from '@radix-ui/react-popover';
 import { LogOutIcon } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
 
-export default function NavAuth() {
-  const [loggedIn, setLoggedIn] = useState(false);
+export default async function NavAuth() {
+  const { isAuthenticated } = await auth();
+
+  const user = await currentUser();
 
   return (
     <>
-      {loggedIn ? (
+      {isAuthenticated ? (
         <Popover>
           <PopoverTrigger>
             <Avatar>
               <AvatarImage
-                src='https://github.com/shadcn.png'
+                src={user?.imageUrl}
                 className='w-10 h-10 rounded-full'
               />
               <AvatarFallback className='p-3 rounded-full bg-background'>
-                CN
+                <span className='text-sm font-semibold'>{user?.firstName}</span>
               </AvatarFallback>
             </Avatar>
           </PopoverTrigger>
@@ -34,7 +34,7 @@ export default function NavAuth() {
             className='w-fit bg-background p-3 rounded-md shadow-md space-y-3'
           >
             <p className='font-semibold text-sm'>Account</p>
-            <Button variant={'destructive'} onClick={() => setLoggedIn(false)}>
+            <Button variant={'destructive'}>
               <LogOutIcon />
               <span>Logout</span>
             </Button>
