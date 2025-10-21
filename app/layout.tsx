@@ -3,7 +3,6 @@ import { LocationProvider } from '@/features/location/context/location-context';
 import { ClerkProvider } from '@clerk/nextjs';
 import type { Metadata } from 'next';
 import { Quicksand } from 'next/font/google';
-import { Suspense } from 'react';
 import './globals.css';
 
 export const quicksand = Quicksand({
