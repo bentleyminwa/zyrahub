@@ -10,6 +10,11 @@ export default function SigninPage() {
             <Loader />
           </div>
         }
+        appearance={{
+          elements: {
+            formButtonPrimary: '',
+          },
+        }}
       />
     </div>
   );

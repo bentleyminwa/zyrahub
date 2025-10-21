@@ -36,12 +36,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${quicksand.className} } antialiase bg-background`}>
-        <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        cssLayerName: 'clerk',
+      }}
+    >
+      <html lang='en'>
+        <body className={`${quicksand.className} } antialiase bg-background`}>
           <LocationProvider>{children}</LocationProvider>
-        </ClerkProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
