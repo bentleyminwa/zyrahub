@@ -41,7 +41,7 @@ export default async function NavAuth() {
             className='w-fit bg-background p-3 rounded-md shadow-md space-y-3'
           >
             <p className='font-semibold text-sm'>Account</p>
-            <SignOutButton>
+            <SignOutButton redirectUrl='/'>
               <Button variant={'destructive'}>
                 <LogOutIcon />
                 <span>Logout</span>
