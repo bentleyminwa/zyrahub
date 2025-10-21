@@ -9,7 +9,7 @@ const LoadScreen = ({ children }: { children: React.ReactNode }) => {
   React.useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 100); // Simulate loading time
+    }, 0);
 
     return () => clearTimeout(timer);
   }, []);
